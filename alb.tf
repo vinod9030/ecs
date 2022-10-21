@@ -1,7 +1,7 @@
 resource "aws_lb" "default" {
   name            = "ecs-lb"
   subnets         = "subnet-06d9db5a1de59d5c7"
-  security_groups = "[sg-0551d0f7731151aa3]"
+  security_groups = "sg-0551d0f7731151aa3"
 }
 
 resource "aws_lb_target_group" "hello_world" {

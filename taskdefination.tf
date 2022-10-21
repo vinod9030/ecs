@@ -26,21 +26,21 @@ DEFINITION
 }
 
 resource "aws_security_group" "hello_world_task" {
-  name        = "example-task-security-group"
-  vpc_id      = aws_vpc.default.id
+  name        = "ecs-security-group"
+  vpc_id      = "vpc-0382f51c959645e99"
 
   ingress {
     protocol        = "tcp"
     from_port       = 3000
     to_port         = 3000
-    security_groups = [aws_security_group.lb.id]
+    security_groups = "sg-0551d0f7731151aa3"
   }
 
   egress {
     protocol    = "-1"
     from_port   = 0
     to_port     = 0
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["172.31.0.0/16"]
   }
 }
 
