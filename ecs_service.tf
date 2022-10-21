@@ -16,5 +16,5 @@ resource "aws_ecs_service" "hello_world" {
     container_port   = 3000
   }
 
-  depends_on = "aws_lb_listener.hello_world"
+  depends_on = "hello_world"
 }
